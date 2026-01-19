@@ -35,7 +35,7 @@ viperUi = ViperUi.New()
 extensionMediator.addExtension("viperUi", viperUi)
 configManager = ConfigManager.New()
 extensionMediator.addExtension("configManager", configManager)
-
+version = "3.3.0"
 import_code("./commands.src")
 
 init = function()
@@ -70,7 +70,7 @@ init = function()
     end if
 
     clear_screen()
-    viperUi.init()
+    viperUi.init(version)
 
     currentLibs = libManager.currentLibs
     listCurrentLibs = []

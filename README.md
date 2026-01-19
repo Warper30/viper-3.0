@@ -18,7 +18,7 @@ You can build this project from source or download the pre-built binaries from t
 
 1. Clone the repository to your local machine using Git:
    ```
-   git clone https://github.com/cantemizyurek/viper-3.0.git
+   git clone https://github.com/Warper30/viper-3.0.git
    ```
 2. Open the cloned project in Visual Studio Code to set up your workspace.
 3. Download Greybel VS extension from Visual Studio Code Marketplace.

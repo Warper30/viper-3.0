@@ -431,10 +431,10 @@ ViperUi.displaySession = function(session)
     result = "<color=" + COLORS.GRAY + "><pos=4.95>———(" + handler.user + "@" + "<color=" + COLORS.RED + ">" + name + "</color>" + ")——[" + "<color=" + COLORS.RED + ">" + ip.public + "</color>" + "]——[" + ip.local + "]——[" + "<color=" + COLORS.RED + ">" + handler.path + "</color>" + "]——[" + "<color=" + COLORS.GREEN + ">" + handler.type + "</color>" + "]<voffset=-0.35em><pos=0><rotate=90>—<pos=0><voffset=-0.7em>—<pos=0><voffset=-1.05em>—<rotate=0><pos=4.95><voffset=-1.4em>——<#c3201f>$</color></color> "
     return result
 end function
-ViperUi.init = function ()
+ViperUi.init = function (version)
     print(viperCoolText)
     print()
-    print "<color=" + COLORS.GRAY + ">" + "<color=" + COLORS.RED + ">" + "Version" + "</color>" + ": " + "<color=" + COLORS.GREEN + ">" + "3.1.7" + "</color>" + "</color>"
+    print "<color=" + COLORS.GRAY + ">" + "<color=" + COLORS.RED + ">" + "Version" + "</color>" + ": " + "<color=" + COLORS.GREEN + ">" + version + "</color>" + "</color>"
     print()
 end function
 ViperUi.displayTable = function (keys, items)

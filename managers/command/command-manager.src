@@ -6,7 +6,6 @@ CommandManager.commands = {}
 CommandManager.aliases = {}
 CommandManager.mediator = null
 CommandManager.queue = []
-CommandManager.history = []
 CommandManager.getCommand = function(command)
     if not(hasIndex(self.commands,command)) or self.commands[command] == null then return Error.New("There is no command with the name " + command)
     return self.commands[command]
@@ -45,10 +44,9 @@ CommandManager.tick = function()
     if self.queue.len() == 0 then return
     command = self.queue.pull()
     if command isa Error then return command
-    self.history.insert(0, command)
     hasPermissions = self.checkPermissions(command[0])
     if hasPermissions isa Error then return hasPermissions
-    return command[0].execute(command[1], self.mediator)
+    return command[0].execute(command[1])
 end function
 CommandManager.checkPermissions = function(command)
     sessionManager = self.mediator.getExtension("sessionManager")
@@ -97,11 +95,13 @@ end function
 CommandManager.removeAlias = function(alias)
     self.aliases.remove(alias)
 end function
+CommandManager.aliases = function()
+    return self.aliases
+end function
 CommandManager.New = function()
     result = new CommandManager
     result.commands = {}
     result.aliases = {}
     result.queue = []
-    result.history = []
     return result
 end function
