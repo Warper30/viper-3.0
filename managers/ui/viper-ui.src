@@ -35,6 +35,7 @@ viperCoolText = "
 <color=#343434>#</color>      <color=#c3201f>              |__|        \/              </color><color=#343434>#</color>
 <color=#343434>#                                                #</color>
 <color=#343434>#</color> <color=#fff>Created by: <s>Volk</s> SkidMall</color>                      <color=#343434>#</color>
+<color=#343434>#</color> <color=#fff>Modified by: Warper30</color>                          <color=#343434>#</color>
 <color=#343434>##################################################</color>"
 
 ViperUi = {}

@@ -404,7 +404,8 @@ portFinderCommandHandler = function(params)
     session = sessionManager.currentSession 
     viperUi = extensionMediator.getExtension("viperUi")
     ip = params.ip
-    routerip = session.data.ip.public
+    router = params.router
+    if ip == "local" then routerip = session.data.ip.public
     if ip == "local" then ip = session.data.ip.local
     devices = []
     router = Router.New(routerip)
@@ -431,12 +432,14 @@ commandManager.registerCommand(Command.New({
     "name": "portfinder",
     "description": "Scan local device for ports",
     "parameters": [
-        OptionsParameter.New({
+        Parameter.New({
             "name": "ip",
             "required": false,
-            "options": {
-                "ip": "ip"
-            },
+            "default": "local"
+        }),
+        Parameter.New({
+            "name": "router",
+            "required": false,
             "default": "local"
         })
     ],
@@ -476,10 +479,6 @@ commandManager.registerCommand(Command.New({
         OptionsParameter.New({
             "name": "ip",
             "required": false,
-            "options": {
-                "ip": "ip",
-                "random": "random"
-            },
             "default": "random"
         })
     ],
